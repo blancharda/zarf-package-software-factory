@@ -67,8 +67,8 @@ After Flux reconciles the change, Jenkins should now be using GitLab as the SSO 
 
 #### Notes
 
-* A limitation of Jira's SSO configuration is that you still need to create Jira users for each GitLab user that is going to use Jira. This may be able to be resolved using Jira's "Just-In-Time" user creation, but so far we haven't been able to get that working. The Jira user's username must be the same as the GitLab user that is logging in.
-* The SSO login for Jira is weird. When you go to the Jira website you then have to click the "Login" button in the top right of the page.
+- A limitation of Jira's SSO configuration is that you still need to create Jira users for each GitLab user that is going to use Jira. This may be able to be resolved using Jira's "Just-In-Time" user creation, but so far we haven't been able to get that working. The Jira user's username must be the same as the GitLab user that is logging in.
+- The SSO login for Jira is weird. When you go to the Jira website you then have to click the "Login" button in the top right of the page.
 
 1. Create a new Application in GitLab: Admin > Applications > New application
    1. Name: Jira
@@ -93,7 +93,7 @@ After Flux reconciles the change, Jenkins should now be using GitLab as the SSO 
 
    1. Specify your license key -- If you have one apply it. If not, click "generate a Jira trial license" to generate one
 
-   1. Set up administrator account -- Use your own information
+   1. Set up administrator account -- Use your own information, but make the username `root`. Keep the password that you set. You'll need to use it to do administrative stuff.
 
    1. Set up email notifications -- Choose "Later", unless you have your own SMTP server that you can use that is external to the kubernetes cluster
 
@@ -112,7 +112,3 @@ After Flux reconciles the change, Jenkins should now be using GitLab as the SSO 
    1. Remember user logins: user's preference
    1. Show IdP on the login page: checked
    1. Login button text: user's preference. Recommend `Continue with GitLab`
-
-1. Create a user called `root` -- Settings > User management. Give it `jira-administrators` and `jira-software-users` groups
-
-
