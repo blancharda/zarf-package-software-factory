@@ -30,7 +30,7 @@ NOTE: `bigbang.dev` is the default domain. If you are using a different domain, 
 
 - NOTE: Configuring Jenkins to use GitLab as the SSO provider will not work when using the `bigbang.dev` domain. During the OAuth ping-pong auth flow Jenkins tries to run a POST http request to get a login token, but it isn't able to hit `https://gitlab.bigbang.dev` since that resolves to `127.0.0.1`. This may be fixable through the use of an Istio [ServiceEntry](https://istio.io/latest/docs/reference/config/networking/service-entry/). More investigation needed.
 
-### Instructions
+#### Instructions
 
 1. Navigate to [https://gitlab.bigbang.dev/admin/applications/new](https://gitlab.bigbang.dev/admin/applications/new) and create a new Application for Jenkins. Click "Save application" when finished.
    1. Name: `Jenkins`
@@ -62,3 +62,13 @@ NOTE: `bigbang.dev` is the default domain. If you are using a different domain, 
     ```
 
 After Flux reconciles the change, Jenkins should now be using GitLab as the SSO provider.
+
+### Configure Jira
+
+1. Navigate to [https://jira.bigbang.dev](https://jira.bigbang.dev)
+
+1. Set up Jira. This guide will use the "I'll set it up myself" option. Click "I'll set it up myself" then click Next
+
+1. Use "Built In" for database connection. (Note: For eval purposes only. In production, Jira needs to use an external database)
+
+1. 
