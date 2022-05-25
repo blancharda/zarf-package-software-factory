@@ -77,10 +77,10 @@ spec:
       namespace: bigbang
       name: twistlock
   timeout: 15m
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-gpg
+  # decryption:
+  #   provider: sops
+  #   secretRef:
+  #     name: sops-gpg
   postBuild:
     substitute:
       ZARF_REGISTRY: "###ZARF_REGISTRY###"
