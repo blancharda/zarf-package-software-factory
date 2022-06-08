@@ -63,7 +63,7 @@ $(while IFS= read -r line; do printf '%4s%s\n' '' "$line"; done <<< "$_COREFILE"
 EOF
 
 # apply the configmap
-echo "Attempting to apply the following ConfigMap:"
+echo "Attempting to apply the following ConfigMap patch:"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cat $TMP_FILE
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
